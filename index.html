@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+      <title>My Tropical Islands</title>
+      <meta name="description" content="Test application for a course on Web technology inside the course Digital Humanities and Digital Knowledge, University of Bologna.">
+      <meta name="author" content="Alessandra Foschi">
+      <meta charset="utf-8"/>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" ></script>
+    </head>
+    <body>
+      <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">My Tropical Islands</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" data-toggle="modal" href="#about01">About</a>
+                <a class="nav-item nav-link" data-toggle="modal" href="#book01">Book a vacation</a>
+                <a class="nav-item nav-link" data-toggle="modal" href="#contacts01">Contacts</a>
+              </div>
+            </div>
+          </nav>
+          <!-- Modal About -->
+          <div class="modal" role="dialog" id="about01">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">About <i>My Vacations</i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>This is a test application for a course on Web technology for the DHDK course, &copy 2018 Fabio Vitali</p>
+                        <p>Most of its content, including the images, are taken from <a href="#"> Travel Indicator</a>. </p>
+                        <p>The use of such material in this site is <b>not</b> meant to provide information about the places illustrated here, but merely as an exercise to test various Web technologies for the students of the course </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Book -->
+            <div class="modal" role="dialog" id="book01">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Book a vacation</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="container-fluid">
+                              <div class="form-group row">
+                                  <div class="col-sm-4">
+                                      <label class="mt-2 mr-2" for="inlineFormCustomSelectPref">Choose Island</label>
+                                  </div>
+                                  <div class="col-sm-8">
+                                      <select class="custom-select mr-sm-2" id="inlineFormCustomSelectPref">
+                                              <option selected disabled>Choose...</option>
+                                          <optgroup label="Beaches to relax in...">
+                                              <option>Aitutaki, Cook Islands</option>
+                                              <option>Maldives</option>
+                                              <option>Saba</option>
+                                              <option>Koh Rong, Cambodia</option>
+                                              <option>Koh Lipe, Thailand</option>
+                                            </optgroup> 
+                                            <optgroup label="Beaches off the beaten track...">
+                                              <option>Fernando de Noronha, Brazil</option>
+                                              <option>Bohey Dulang, Malaysia</option>
+                                              <option>Moorea, French Polynesia</option>
+                                              <option>Havelock Island, India</option>
+                                              <option>Carriacou, Grenada</option>
+                                            </optgroup>
+                                        </select>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-sm-6">
+                                    <label for="inputarriving">Arriving</label>
+                                    <input type="date" class="form-control" id="inputarriving" >
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <label for="inputdeparting">Departing</label>
+                                    <input type="date" class="form-control" id="inputdeparting" >
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                      <label for="inputname">Name</label>
+                                      <input type="text" class="form-control" id="inputname" placeholder="Name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <label for="inputsurname">Surname</label>
+                                      <input type="text" class="form-control" id="inputsurname" placeholder="Surname">
+                                    </div>
+                                  </div>
+                                <div class="form-group row">
+                                  <div class= "col-sm-12">
+                                  <label for="inputAddress">Address</label>
+                                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-sm-6">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control">
+                                      <option selected disabled>Choose...</option>
+                                      <option value="AF">Afghanistan</option>
+                                      <option value="AX">Åland Islands</option>
+                                      <option value="AL">Albania</option>
+                                      <option value="DZ">Algeria</option>
+                                      <option value="AS">American Samoa</option>
+                                      <option value="AD">Andorra</option>
+                                      <option value="AO">Angola</option>
+                                      <option value="AI">Anguilla</option>
+                                      <option value="AQ">Antarctica</option>
+                                      <option value="AG">Antigua and Barbuda</option>
+                                      <option value="AR">Argentina</option>
+                                      <option value="AM">Armenia</option>
+                                      <option value="AW">Aruba</option>
+                                      <option value="AU">Australia</option>
+                                      <option value="AT">Austria</option>
+                                      <option value="AZ">Azerbaijan</option>
+                                      <option value="BS">Bahamas</option>
+                                      <option value="BH">Bahrain</option>
+                                      <option value="BD">Bangladesh</option>
+                                      <option value="BB">Barbados</option>
+                                      <option value="BY">Belarus</option>
+                                      <option value="BE">Belgium</option>
+                                      <option value="BZ">Belize</option>
+                                      <option value="BJ">Benin</option>
+                                      <option value="BM">Bermuda</option>
+                                      <option value="BT">Bhutan</option>
+                                      <option value="BO">Bolivia, Plurinational State of</option>
+                                      <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                                      <option value="BA">Bosnia and Herzegovina</option>
+                                      <option value="BW">Botswana</option>
+                                      <option value="BV">Bouvet Island</option>
+                                      <option value="BR">Brazil</option>
+                                      <option value="IO">British Indian Ocean Territory</option>
+                                      <option value="BN">Brunei Darussalam</option>
+                                      <option value="BG">Bulgaria</option>
+                                      <option value="BF">Burkina Faso</option>
+                                      <option value="BI">Burundi</option>
+                                      <option value="KH">Cambodia</option>
+                                      <option value="CM">Cameroon</option>
+                                      <option value="CA">Canada</option>
+                                      <option value="CV">Cape Verde</option>
+                                      <option value="KY">Cayman Islands</option>
+                                      <option value="CF">Central African Republic</option>
+                                      <option value="TD">Chad</option>
+                                      <option value="CL">Chile</option>
+                                      <option value="CN">China</option>
+                                      <option value="CX">Christmas Island</option>
+                                      <option value="CC">Cocos (Keeling) Islands</option>
+                                      <option value="CO">Colombia</option>
+                                      <option value="KM">Comoros</option>
+                                      <option value="CG">Congo</option>
+                                      <option value="CD">Congo, the Democratic Republic of the</option>
+                                      <option value="CK">Cook Islands</option>
+                                      <option value="CR">Costa Rica</option>
+                                      <option value="CI">Côte d'Ivoire</option>
+                                      <option value="HR">Croatia</option>
+                                      <option value="CU">Cuba</option>
+                                      <option value="CW">Curaçao</option>
+                                      <option value="CY">Cyprus</option>
+                                      <option value="CZ">Czech Republic</option>
+                                      <option value="DK">Denmark</option>
+                                      <option value="DJ">Djibouti</option>
+                                      <option value="DM">Dominica</option>
+                                      <option value="DO">Dominican Republic</option>
+                                      <option value="EC">Ecuador</option>
+                                      <option value="EG">Egypt</option>
+                                      <option value="SV">El Salvador</option>
+                                      <option value="GQ">Equatorial Guinea</option>
+                                      <option value="ER">Eritrea</option>
+                                      <option value="EE">Estonia</option>
+                                      <option value="ET">Ethiopia</option>
+                                      <option value="FK">Falkland Islands (Malvinas)</option>
+                                      <option value="FO">Faroe Islands</option>
+                                      <option value="FJ">Fiji</option>
+                                      <option value="FI">Finland</option>
+                                      <option value="FR">France</option>
+                                      <option value="GF">French Guiana</option>
+                                      <option value="PF">French Polynesia</option>
+                                      <option value="TF">French Southern Territories</option>
+                                      <option value="GA">Gabon</option>
+                                      <option value="GM">Gambia</option>
+                                      <option value="GE">Georgia</option>
+                                      <option value="DE">Germany</option>
+                                      <option value="GH">Ghana</option>
+                                      <option value="GI">Gibraltar</option>
+                                      <option value="GR">Greece</option>
+                                      <option value="GL">Greenland</option>
+                                      <option value="GD">Grenada</option>
+                                      <option value="GP">Guadeloupe</option>
+                                      <option value="GU">Guam</option>
+                                      <option value="GT">Guatemala</option>
+                                      <option value="GG">Guernsey</option>
+                                      <option value="GN">Guinea</option>
+                                      <option value="GW">Guinea-Bissau</option>
+                                      <option value="GY">Guyana</option>
+                                      <option value="HT">Haiti</option>
+                                      <option value="HM">Heard Island and McDonald Islands</option>
+                                      <option value="VA">Holy See (Vatican City State)</option>
+                                      <option value="HN">Honduras</option>
+                                      <option value="HK">Hong Kong</option>
+                                      <option value="HU">Hungary</option>
+                                      <option value="IS">Iceland</option>
+                                      <option value="IN">India</option>
+                                      <option value="ID">Indonesia</option>
+                                      <option value="IR">Iran, Islamic Republic of</option>
+                                      <option value="IQ">Iraq</option>
+                                      <option value="IE">Ireland</option>
+                                      <option value="IM">Isle of Man</option>
+                                      <option value="IL">Israel</option>
+                                      <option value="IT">Italy</option>
+                                      <option value="JM">Jamaica</option>
+                                      <option value="JP">Japan</option>
+                                      <option value="JE">Jersey</option>
+                                      <option value="JO">Jordan</option>
+                                      <option value="KZ">Kazakhstan</option>
+                                      <option value="KE">Kenya</option>
+                                      <option value="KI">Kiribati</option>
+                                      <option value="KP">Korea, Democratic People's Republic of</option>
+                                      <option value="KR">Korea, Republic of</option>
+                                      <option value="KW">Kuwait</option>
+                                      <option value="KG">Kyrgyzstan</option>
+                                      <option value="LA">Lao People's Democratic Republic</option>
+                                      <option value="LV">Latvia</option>
+                                      <option value="LB">Lebanon</option>
+                                      <option value="LS">Lesotho</option>
+                                      <option value="LR">Liberia</option>
+                                      <option value="LY">Libya</option>
+                                      <option value="LI">Liechtenstein</option>
+                                      <option value="LT">Lithuania</option>
+                                      <option value="LU">Luxembourg</option>
+                                      <option value="MO">Macao</option>
+                                      <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                                      <option value="MG">Madagascar</option>
+                                      <option value="MW">Malawi</option>
+                                      <option value="MY">Malaysia</option>
+                                      <option value="MV">Maldives</option>
+                                      <option value="ML">Mali</option>
+                                      <option value="MT">Malta</option>
+                                      <option value="MH">Marshall Islands</option>
+                                      <option value="MQ">Martinique</option>
+                                      <option value="MR">Mauritania</option>
+                                      <option value="MU">Mauritius</option>
+                                      <option value="YT">Mayotte</option>
+                                      <option value="MX">Mexico</option>
+                                      <option value="FM">Micronesia, Federated States of</option>
+                                      <option value="MD">Moldova, Republic of</option>
+                                      <option value="MC">Monaco</option>
+                                      <option value="MN">Mongolia</option>
+                                      <option value="ME">Montenegro</option>
+                                      <option value="MS">Montserrat</option>
+                                      <option value="MA">Morocco</option>
+                                      <option value="MZ">Mozambique</option>
+                                      <option value="MM">Myanmar</option>
+                                      <option value="NA">Namibia</option>
+                                      <option value="NR">Nauru</option>
+                                      <option value="NP">Nepal</option>
+                                      <option value="NL">Netherlands</option>
+                                      <option value="NC">New Caledonia</option>
+                                      <option value="NZ">New Zealand</option>
+                                      <option value="NI">Nicaragua</option>
+                                      <option value="NE">Niger</option>
+                                      <option value="NG">Nigeria</option>
+                                      <option value="NU">Niue</option>
+                                      <option value="NF">Norfolk Island</option>
+                                      <option value="MP">Northern Mariana Islands</option>
+                                      <option value="NO">Norway</option>
+                                      <option value="OM">Oman</option>
+                                      <option value="PK">Pakistan</option>
+                                      <option value="PW">Palau</option>
+                                      <option value="PS">Palestinian Territory, Occupied</option>
+                                      <option value="PA">Panama</option>
+                                      <option value="PG">Papua New Guinea</option>
+                                      <option value="PY">Paraguay</option>
+                                      <option value="PE">Peru</option>
+                                      <option value="PH">Philippines</option>
+                                      <option value="PN">Pitcairn</option>
+                                      <option value="PL">Poland</option>
+                                      <option value="PT">Portugal</option>
+                                      <option value="PR">Puerto Rico</option>
+                                      <option value="QA">Qatar</option>
+                                      <option value="RE">Réunion</option>
+                                      <option value="RO">Romania</option>
+                                      <option value="RU">Russian Federation</option>
+                                      <option value="RW">Rwanda</option>
+                                      <option value="BL">Saint Barthélemy</option>
+                                      <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                      <option value="KN">Saint Kitts and Nevis</option>
+                                      <option value="LC">Saint Lucia</option>
+                                      <option value="MF">Saint Martin (French part)</option>
+                                      <option value="PM">Saint Pierre and Miquelon</option>
+                                      <option value="VC">Saint Vincent and the Grenadines</option>
+                                      <option value="WS">Samoa</option>
+                                      <option value="SM">San Marino</option>
+                                      <option value="ST">Sao Tome and Principe</option>
+                                      <option value="SA">Saudi Arabia</option>
+                                      <option value="SN">Senegal</option>
+                                      <option value="RS">Serbia</option>
+                                      <option value="SC">Seychelles</option>
+                                      <option value="SL">Sierra Leone</option>
+                                      <option value="SG">Singapore</option>
+                                      <option value="SX">Sint Maarten (Dutch part)</option>
+                                      <option value="SK">Slovakia</option>
+                                      <option value="SI">Slovenia</option>
+                                      <option value="SB">Solomon Islands</option>
+                                      <option value="SO">Somalia</option>
+                                      <option value="ZA">South Africa</option>
+                                      <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                      <option value="SS">South Sudan</option>
+                                      <option value="ES">Spain</option>
+                                      <option value="LK">Sri Lanka</option>
+                                      <option value="SD">Sudan</option>
+                                      <option value="SR">Suriname</option>
+                                      <option value="SJ">Svalbard and Jan Mayen</option>
+                                      <option value="SZ">Swaziland</option>
+                                      <option value="SE">Sweden</option>
+                                      <option value="CH">Switzerland</option>
+                                      <option value="SY">Syrian Arab Republic</option>
+                                      <option value="TW">Taiwan, Province of China</option>
+                                      <option value="TJ">Tajikistan</option>
+                                      <option value="TZ">Tanzania, United Republic of</option>
+                                      <option value="TH">Thailand</option>
+                                      <option value="TL">Timor-Leste</option>
+                                      <option value="TG">Togo</option>
+                                      <option value="TK">Tokelau</option>
+                                      <option value="TO">Tonga</option>
+                                      <option value="TT">Trinidad and Tobago</option>
+                                      <option value="TN">Tunisia</option>
+                                      <option value="TR">Turkey</option>
+                                      <option value="TM">Turkmenistan</option>
+                                      <option value="TC">Turks and Caicos Islands</option>
+                                      <option value="TV">Tuvalu</option>
+                                      <option value="UG">Uganda</option>
+                                      <option value="UA">Ukraine</option>
+                                      <option value="AE">United Arab Emirates</option>
+                                      <option value="GB">United Kingdom</option>
+                                      <option value="US">United States</option>
+                                      <option value="UM">United States Minor Outlying Islands</option>
+                                      <option value="UY">Uruguay</option>
+                                      <option value="UZ">Uzbekistan</option>
+                                      <option value="VU">Vanuatu</option>
+                                      <option value="VE">Venezuela, Bolivarian Republic of</option>
+                                      <option value="VN">Viet Nam</option>
+                                      <option value="VG">Virgin Islands, British</option>
+                                      <option value="VI">Virgin Islands, U.S.</option>
+                                      <option value="WF">Wallis and Futuna</option>
+                                      <option value="EH">Western Sahara</option>
+                                      <option value="YE">Yemen</option>
+                                      <option value="ZM">Zambia</option>
+                                      <option value="ZW">Zimbabwe</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck"> Remember me </label>
+                                  </div>
+                                </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Book your vacation</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- Modal Contacts -->
+            <div class="modal" role="dialog" id="contacts01">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Contacts</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>for any further information about your vacation, please write to <a href="mailto:fabio.vitali@unibo.it"> fabio.vitali@unibo.it </a> </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- ACCORDION -->
+            <div class="accordion" id="accordion">
+
+              <!--Our destinations-->
+                    <div class="card">
+                      <div class="card-header" id="heading01">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ourdestinations" aria-expanded="true">
+                            Our destinations
+                          </button>
+                        </h5>
+                      </div>
+                    </div>
+                      <div id="ourdestinations" class="collapse" aria-labelledby="heading01" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class= "container-fluid">
+                              <div class="row">
+                                <div class="col-sm">
+                                  <img src="beach1.jpg" class="img-fluid" alt="nice beach"></img>
+                                </div>
+                                <div class="col-sm">
+                                  <h5>Get out of the city and on a nice beach!</h5>
+                                  <p>Some like their holidays active, others like things slow. There is no
+                                    shame in going on holiday, kicking back and doing absolutely nothing, yet so
+                                    often in reality it doesn't quite work out like that. Arrive in a new
+                                    destination, and most of us will instantly want to head out and explore every
+                                    nook and cranny. We just can't help ourselves.</p>
+                                 <p>We have come up with a few locations that will help you a hand in
+                                    resolving this conondrum. These destinations feature some of the most
+                                    spectacular scenery seen anywhere in the world, but there is not much to do
+                                    other than gawk at it in awe, and kick back...</p>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+
+                <!--Beaches to relax in...-->
+                    <div class="card">
+                      <div class="card-header" id="heading02">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#beachestorelax" aria-expanded="false">
+                            Beaches to relax in...
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="beachestorelax" class="collapse" aria-labelledby="heading02" data-parent="#accordion">
+                       <div class="card-body">
+                        <div class="container-fluid">
+                          <div class="row" style="padding-left:20%;padding-right:20%;">
+                            <div class="col-sm">
+                            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+                                  </ol>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <p ><img src="beach1.jpg" width="700" height="450" alt="Aitutaki beach"></p>
+                                    <div class="carousel-caption" style="font-size:1.5vw">
+                                      <h5>1. Aitutaki, Cook Islands</h5>
+                                      <p>Too good to be true, yep, that is definitely the tag we would attach to Aitutaki, an island of the Cook Islands in the South Pacific that circles around
+                                        a shallow lagoon. Besides diving into the crystal clear water, laying on the
+                                        beach under a palm tree and having a bite or a drink in the bars and restaurants
+                                        on Aitutaki, there is NOT much to do here at all. Just the way we like it.</p>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <p><img src="beach2.jpg" width="700" height="450" alt="Maldives beach"></p>
+                                      <div class="carousel-caption" style="font-size:1.5vw">
+                                      <h5>2. Maldives  </h5>
+                                      <p>The Maldives warrant an obvious inclusion in this list. 1,192 coral islands
+                                        that offer absolutely NOTHING to do except for the most gorgeous shallow waters
+                                        full of marine life, beaches and fantastic resorts. Go here and laze your days
+                                        away.</p>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <p><img src="beach3.jpg" width="700" height="450" alt="Saba beach"></p>
+                                      <div class="carousel-caption" style="font-size:1.5vw">
+                                      <h5>3. Saba    </h5>
+                                      <p>Good old Saba. This tiny Caribbean volcanic island officially forms part of
+                                        the Kingdom of the Netherlands and pops out of sea like a mountain out of
+                                        nowhere. It has 2,000 inhabitants and has a single road connecting everything.
+                                        So tiny, yet such great scenery and no way to easily get off the island. Yep,
+                                        you'll definitely have to relax here.</p>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <p><img src="beach4.jpg" width="700" height="450" alt="Koh Rong beach"></p>
+                                      <div class="carousel-caption" style="font-size:1.5vw">
+                                      <h5>4. Koh Rong, Cambodia</h5>
+                                      <p>This is not the kind of Cambodia you had in mind, trust us. No temples, no
+                                        Khmer era relics. Koh Rong is more like a Thai island without all the
+                                        development. Fantastically beautiful, yet no resorts and nothing to see or do
+                                        other than beaches and jungle. Sounds good, right?</p>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <p><img src="beach5.jpg" width="700" height="450" alt="Koh Lipe beach"></p>
+                                      <div class="carousel-caption " style="font-size:1.5vw">
+                                      <h5>5. Koh Lipe, Thailand</h5>
+                                      <p>Almost everybody can name you a few "Koh" of Thailand nowadays. But not many
+                                        have heard of Koh Lipe, and looking at its size that is no surprise. Put it back
+                                        to a Phuket or Langkawi on the map and you can barely spot it. This car-free
+                                        island has absolutely nothing to do but long stretches of beach with shallow
+                                        waters in front of it, and a bit of jungle in the interior. Once you get here,
+                                        you will not be able to do much else than laying back, having a swim, grabbing a
+                                        drink or bite to eat. And the next day? Rinse and repeat. Love it.</p>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </a>
+                              </div>
+                             </div>
+                            </div>
+                            </div>
+                          </div>
+
+                    <!--Beaches off the beaten track-->
+                    <div class="card">
+                      <div class="card-header" id="heading03">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#beachesoff" aria-expanded="false" aria-controls="beachesoff">
+                            Beaches off the beaten track
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="beachesoff" class="collapse" aria-labelledby="heading03" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-sm" style="border: 1px solid #ccc; border-radius:5px; color:#00855D; padding:10px;">
+                                <div style="background-color:#c4f2cf; padding:10px; border-radius:5px;"><h5>Off the beaten track</h5>
+                                  <p>Maybe we are spoiled. We are running this website out of tropical Singapore, which means year-round warm temperatures at home anyway, but also countless fantastic South-east Asian travel destinations just a weekend trip away. Whether we want to jet off to Bali or Phuket, to Bangkok or Hong Kong, it is often a matter of conveniently flying off on a budget airline after work on a Friday and returning late on a Sunday.</p>
+                                  <p>The only downside to this is that we are not the only one doing this! You can fly to Krabi or Nha Trang, but then in many places you will still spend your weekend packed like sardines on a beach, next to your neighbours back home. Long story short, sometimes you want to head off to a place with palm trees and white sand beaches but at the same time get away from the crowds as well. If that's what you are after, we have some suggestions for you (that are not just located in Asia, of course). For even more inspiration just use our Destination Search.</p></div>
+                                </div>
+                                <div class="col-sm" style="border: 1px solid #ccc; border-radius:5px; padding:10px;">
+                                  <img src="beach6.jpg" style="border-radius:5px;" class="img-fluid" alt="Fernando de Noronha beach"></img>
+                                  <div style="padding:20px;"><h5>Fernando de Noronha, Brazil</h5>
+                                    <p>The first destination is an island well off the coast of Brazil in South America called Fernando de Noronha. This is a renowned eco travel destination that might just be one of the most pretty spots to visit in Brazil. But as it is pretty out of the way, the (domestic and foreign) crowds don't seem to have quite discovered it. So go here, enjoy some hiking into the rocky jungle covered interior, or enjoy the water and go swimming, surfing or diving. Take note that accomodation here is basic at best, but then that's the whole point isn't it?</p></div>
+                                </div>
+                                <div class="col-sm" style="border: 1px solid #ccc; border-radius:5px;padding:10px;">
+                                  <img src="beach7.jpg" style="border-radius:5px;" class="img-fluid" alt="Bohey Duland beach"></img>
+                                  <div style="padding:20px;"><h5>Bohey Dulang, Malaysia</h5>
+                                    <p>Bohey Dulang is one of the islands the forms part of the Tun Sakaran Marine Park in Sabah of Malaysia. You will need to travel to Semporna and spend the night there, then make your way here by boat. The main sight is the volcanic crater that is under water and which you get spectacular views over after you have made the effort of climbing your way up through the thick jungle... Once you find your way down again you can go swimming or snorkeling although you won't find any real beaches. But then again you won't find many people either!</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm" style="border: 1px solid #ccc; border-radius:5px;padding:10px;">
+                                  <img src="beach8.jpg" style="border-radius:5px;" class="img-fluid" alt="Moorea beach"></img>
+                                  <div style="padding:20px;"><h5>Moorea, French Polynesia </h5>
+                                    <p>Everybody knows Bora Bora. Nobody knows Moorea (which lies 240 kilometer or 150 miles to its south-east, right next to Tahiti). This island is sometimes described as a more authentic alternative to Bora Bora. There is certainly accomodation here that is far from basic (looking at you Hilton and Intercontinental), but the crowds are by any definition less thick too. The interior is covered with mountains and lush rain forest, while the beaches are nothing less than dreamy.</p>
+                                  </div>
+                                </div>
+                                <div class="col-sm" style="border: 1px solid #ccc; border-radius:5px;padding:10px;">
+                                  <img src="beach9.jpg" style="border-radius:5px;" class="img-fluid" alt="Havelock Island beach"></img>
+                                  <div style="padding:20px;"><h5>Havelock Island, India   </h5>
+                                    <p>This place in the Andaman and Nicobar Islands is not really a household name. Yet, as sooner or later tourists will start discovering it right? Part of India but with a vibe that is more comparable to Thailand, white sand beaches that are likened to the Maldives and fantastic scenery both around the beaches and inland. Best of all? It is cheaper and much, much quieter. For now.</p>
+                                  </div>
+                                </div>
+                                <div class="col-sm" style="border: 1px solid #ccc; border-radius:5px;padding:10px;">
+                                  <img src="beach10.jpg" style="border-radius:5px;" class="img-fluid" alt="Carriacou beach"></img>
+                                  <div style="padding:20px;"><h5>Carriacou, Grenada  </h5>
+                                    <p>And finally, back to the Caribbean. Carriacou is an island of the Grenadines island chain that is part of Grenada. Travel to the main island of Grenada and you will have no trouble finding golf courses and luxury resorts, but travel to Carriacou and you will find a quieter and much more back-to-basics kind of place.        </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </body>
+                  </html>
